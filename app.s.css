@@ -1,0 +1,233 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+ul li {
+  padding: 0;
+}
+
+ol {
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  border: none;
+  text-transform: none;
+  -webkit-appearance: button;
+}
+
+html {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  -webkit-text-size-adjust: auto !important;
+  -ms-text-size-adjust: auto !important;
+  -moz-text-size-adjust: auto !important;
+  margin: 0;
+  height: 100%;
+  width:100%;
+  color: white;
+  background-color: #2d3132;
+  font: normal 12px/1.5 "Helvetica Neue", Helvetica, "STHeiti STXihei", "Microsoft JhengHei", "Microsoft Yahei", Arial, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Loader */
+.loader {
+  position: absolute;
+  z-index: 9;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: #0b6aa1;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.loader-graph, .loader-progress {
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  width: 64px;
+  height: 64px;
+  margin: -16px 0 0 -32px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.loader-graph {
+      color: transparent;
+      text-align: center;
+      border-top: 5px solid rgba(255, 255, 255, 0.2);
+      border-right: 5px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 5px solid rgba(255, 255, 255, 0.2);
+      border-left: 5px solid #ffffff;
+      border-radius: 32px;
+      -webkit-animation: rotate 0.72s linear 0s infinite;
+      -o-animation: rotate 0.72s linear 0s infinite;
+      animation: rotate 0.72s linear 0s infinite;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+}
+.loader-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    line-height: 24px;
+    font-size: 16px;
+    top: 50%;
+    text-align: center;
+    margin-top: 1em;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.loader-progress {
+  font-size: 14px;
+  text-align: center;
+  padding: 20px 0;
+  line-height: 24px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.loader .reload {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 0 8px;
+  border-radius: 4px;
+  height: 20px;
+  color: white;
+  text-align: center;
+  border: 1px solid white;
+}
+
+/* Animation */
+.scaleOut {
+  opacity: 0;
+  -webkit-transition: all 1s;
+  -webkit-transform: scale(1.6);
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(360deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+.arrow_up{
+    display:block;
+    height:10px;
+    width:20px;
+    background:url('arrow_bg.png') no-repeat 0 0;
+    background-size:20px 10px;
+    position:absolute;
+    left:50%;
+    margin-left:-10px;
+    bottom:11px;
+    text-indent:-9999px;
+    overflow:hidden;
+    -webkit-animation:a_arrow 1.2s linear infinite;
+    z-index:99
+}
+@-webkit-keyframes a_arrow{
+    0%{-webkit-transform:translate(0,0px)}
+    25%{-webkit-transform:translate(0,-3px)}
+    50%{-webkit-transform:translate(0,1px)}
+    75%{-webkit-transform:translate(0,-1px)}
+    100%{-webkit-transform:translate(0,0px)}
+}
+
+
+/* PAGE */
+.pages,
+.page,
+.stage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.stage {
+  display: none;
+}
+
+/* Utils */
+.vh {
+  visibility: hidden;
+}
+
+.dn {
+  display: none;
+}
+
+.tac {
+  text-align: center;
+}
+
+@media only screen and (max-height: 480px) {
+
+}

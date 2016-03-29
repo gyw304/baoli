@@ -1,0 +1,331 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="GBK">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <title>保利中央公园，你我共同的家</title>
+    <meta content="telephone=no" name="format-detection">
+    <link rel="stylesheet" href="app.s.css"/>
+    <script type="text/javascript" src="audio.js"></script>
+    <script type="text/javascript">
+        window.addEventListener("DOMContentLoaded", function(){
+            playbox.init("playbox");
+        }, false);
+    </script>
+</head>
+<body>
+
+<span id="playbox" class="btn_music" onClick="playbox.init(this).play();"><audio src="music1.mp3" loop="loop" id="audio"></audio></span>
+
+<script>
+    document.body.addEventListener('touchmove', function(){}, false)
+</script>
+<div id="loader" class="loader" ontouchmove="return !1">
+    <div class="loader-graph"></div>
+    <div class="loader-progress" id="progress"></div>
+    <div class="loader-text">稍后哦，即将进入。。。</div>
+</div>
+
+<script type="text/template" id="tpml">
+    <section class="page page-1">
+        <div class="stage s1">
+            <div class="men">
+                <div class="men_left"></div>
+                <div class="feizi"></div>
+                <div class="men_right"></div>
+            </div>
+            <div class="startBtn rotats" id="target"></div>
+            <div class="pz"></div>
+        </div>
+
+        <div class="stage s2" id="warpper">
+            <div class="touch_xx">
+                <div class="xingxing x1"><div class="flashX"></div><div class="zzz"></div></div>
+                <div class="xingxing x2"><div class="flashX"></div><div class="zzz"></div></div>
+                <div class="xingxing x3"><div class="flashX"></div><div class="zzz"></div></div>
+                <div class="xingxing x4"><div class="flashX"></div><div class="zzz"></div></div>
+                <div class="xingxing x5"><div class="flashX"></div><div class="zzz"></div></div>
+
+                <div class="pz"></div>
+
+            </div>
+            <div class="c_inner">
+                <div class="yuan"></div>
+                <div class="p1"></div>
+                <div class="p2"></div>
+            </div>
+
+            <div id="dice">
+                <div id="group">
+                    <div class="face" id="face1" data-hideTime="10">
+                        <div class="ico"></div>
+                    </div>
+                    <div class="face" id="face2" data-hideTime="6">
+                        <div class="ico"></div>
+                    </div>
+                    <div class="face" id="face3" data-hideTime="6">
+                        <div class="ico"></div>
+                    </div>
+                    <div class="face" id="face4" data-hideTime="9">
+                        <div class="ico"></div>
+                    </div>
+                    <div class="face" id="face5" data-hideTime="5">
+                        <div class="ico"></div>
+                    </div>
+                    <div class="face" id="face6" data-hideTime="12">
+                        <div class="ico"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cirque">
+                <div class="zhishi"></div>
+                <div id="cirque_inner"></div>
+            </div>
+
+
+            <div class="inner in1">
+                <div class="ws">
+                    <div class="xingxing x1"><div class="flashX"></div><div class="tt"></div></div>
+                    <div class="xingxing x2"><div class="flashX"></div><div class="tt"></div></div>
+                    <div class="xingxing x3"><div class="flashX"></div><div class="tt"></div></div>
+                    <div class="rou">
+                        <div class="rou_inner"></div>
+                    </div>
+                    <div class="rou_zi"></div>
+                </div>
+            </div>
+            <div class="inner in2">
+                <div class="ws">
+                    <div class="zz1"></div>
+                    <div class="zz2"></div>
+                    <div class="zz3"></div>
+                    <div class="rz"></div>
+                    <div class="rous"></div>
+                </div>
+            </div>
+
+            <div class="inner in3">
+                <div class="ws">
+                    <div class="zz1"></div>
+                    <div class="zz2"></div>
+                    <div class="diandian"></div>
+                </div>
+            </div>
+
+            <div class="inner in4">
+                <div class="ws"></div>
+                <div class="ws2">
+                    <div class="ttts tt1"></div>
+                    <div class="ttts tt2"></div>
+                    <div class="ttts tt3"></div>
+                    <div class="ttts tt4"></div>
+                </div>
+            </div>
+
+            <div class="inner in5">
+                <div class="ws">
+                    <div class="ttt tt1"></div>
+                    <div class="ttt tt2"></div>
+                    <div class="ttt tt3"></div>
+                    <div class="lou"></div>
+                </div>
+            </div>
+
+            <div class="inner in6">
+                <div class="ws">
+                    <div class="win">
+                        <div class="jingse"></div>
+                        <div class="overHide">
+                            <div class="boli"></div>
+                        </div>
+                        <div class="ttt"></div>
+                    </div>
+                    <div class="huodong"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="stage s3">
+            <div class="huojian"></div>
+            <div class="endz"></div>
+            <div class="coptRight"></div>
+        </div>
+
+    </section>
+    <!--<section class="page page-2">
+        <div class="stage">
+            <div class="arrow_up"></div>
+        </div>
+    </section>-->
+</script>
+<script>
+    (function(undefined){
+
+        var resLoad=function(a,b){var c=b||{};this.source=a,this.count=0,this.total=a.length,this.onload=c.onload,this.prefix=c.prefix||"",this.version="?v="+(c.version||"0.0.1"),this.init()};resLoad.prototype.init=function(){var a=this;a.source.forEach(function(b){var c=b.substr(b.lastIndexOf(".")+1).toLowerCase(),d=a.prefix+b+a.version;switch(c){case"js":a.script.call(a,d);break;case"css":a.stylesheet.call(a,d);break;case"jpg":case"gif":case"png":case"jpeg":a.image.call(a,d)}})},resLoad.prototype.getProgress=function(){return Math.floor(this.count/this.total*100)},resLoad.prototype.image=function(a){var b=document.createElement("img");this.load(b,a),b.src=a},resLoad.prototype.stylesheet=function(a){var b=document.createElement("link");this.load(b,a),b.rel="stylesheet",b.type="text/css",b.href=a,document.head.appendChild(b)},resLoad.prototype.script=function(a){var b=document.createElement("script");this.load(b,a),b.type="text/javascript",b.src=a,document.head.appendChild(b)},resLoad.prototype.load=function(a,b){var c=this;a.onload=a.onerror=a.onabort=function(a){c.onload&&c.onload({count:++c.count,total:c.total,item:b,type:a.type})}};
+
+        var $progress = document.getElementById('progress')
+        function loading(load) {
+            var count = load.count
+            var total = load.total
+            $progress.innerHTML = Math.round(100*count/total) + '%'
+            if(count === total){
+                return complete()
+            }
+        }
+
+        function next(el, fn) {
+            el.className += ' scaleOut'
+            setTimeout(function(){
+                fn && fn()
+                el.parentNode.removeChild(el)
+            }, 1000)
+        }
+
+        function createPages() {
+            var html = document.getElementById('tpml').innerHTML
+            var $pages = document.createElement('div')
+            var cw = document.documentElement.clientWidth
+            var ch = document.documentElement.clientHeight
+
+            $pages.className = 'pages';
+
+            if(ch>window.screen.availHeight){
+                ch=window.screen.availHeight-44;
+                $pages.style.height=ch+'px';
+            }
+
+            $pages.innerHTML = html
+            document.body.appendChild($pages)
+            return new Pages($pages)
+        }
+
+
+        function complete() {
+            var $loader = document.getElementById('loader')
+            var pages = createPages()
+            /*shareModal()*/
+            pages.play()
+            next($loader)
+
+            Zepto(function(){
+                var touceNum=5;
+                Zepto('#target').on('tap',function(){
+
+                    Zepto('.s1 .pz').hide();
+                    Zepto(this).removeClass('rotats').addClass('startRotate');
+                    Zepto('.men_left').addClass('startMoveLeft');
+                    Zepto('.men_right').addClass('startMoveRight');
+                    Zepto('.feizi').show().addClass('startFei');
+                    setTimeout(function(){
+                        Zepto('.feizi').removeClass('startFei').addClass('zoomOutUp');
+                        setTimeout(function(){
+                            Zepto('.s2').show()
+                        },2000)
+                    },3000);
+                    Zepto('.xingxing').on('tap',function(){
+                        Zepto(this).find('.zzz').show();
+                        touceNum--;
+                        if(touceNum<=0)
+                        {
+                            setTimeout(function(){
+                                Zepto('.touch_xx').addClass('zoomOutStart');
+                                Zepto('.c_inner').show();
+                                setTimeout(function(){
+                                    Zepto('.c_inner').addClass('zoomOut');
+                                    Zepto('#dice,#cirque').show();
+                                },5000)
+                            },3000)
+                        }
+                    });
+
+                    var curNum = 6;
+
+                    Zepto('.face').on('tap',function(){
+                        var _current = Zepto(this).index();
+                        var _hideTime = Zepto(this).attr('data-hideTime');
+
+                        if(!Zepto(this).hasClass('currents'))
+                        {
+                            Zepto(this).addClass('currents');
+                            curNum--
+                            if(curNum<1)
+                            {
+                                setTimeout(function(){
+                                    Zepto('.s3').show()
+                                },1000*_hideTime-2000)
+                            }
+                        }
+
+                        Zepto('.inner').eq(_current).show();
+                        setTimeout(function(){
+                            Zepto('.inner').eq(_current).hide()
+                        },1000*_hideTime+1000)
+                    })
+
+                });
+            });
+
+
+            var diceBox = document.getElementById('dice');
+            var dice = document.getElementById('group');
+            var cirque = document.getElementById('cirque_inner');
+
+            touch.on('#warpper', 'touchstart', function(ev){
+                ev.preventDefault();
+            });
+
+            var target = document.getElementById("warpper");
+            dice.style.webkitTransition = 'all ease .3s';
+            cirque.style.webkitTransition = 'all ease .3s';
+            var deg = 0;
+
+            touch.on(target, 'swiperight', function(ev){
+                deg += 60;
+                dice.style.webkitTransform = "rotateY(" + deg + "deg)";
+                cirque.style.webkitTransform = "rotate(" + deg + "deg)";
+            });
+
+            touch.on(target, 'swipeleft', function(ev){
+                deg -= 60;
+                dice.style.webkitTransform = "rotateY(" + deg + "deg)";
+                cirque.style.webkitTransform = "rotate(" + deg + "deg)";
+            });
+
+        }
+
+
+        var resource = [
+            'main.js',
+            'zepto.min.js',
+            'touch-0.2.14.min.js',
+            'style.css',
+            'animate.css',
+            'el.png',
+            'men.jpg',
+            'el2.png',
+            'b1.jpg',
+            'b2.jpg',
+            'b3.jpg',
+            'b4.jpg',
+            'b5.jpg',
+            'b6.jpg'
+        ];
+
+        new resLoad(resource, {
+            onload: loading,
+            version: '0.0.20'
+        })
+    })();
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
